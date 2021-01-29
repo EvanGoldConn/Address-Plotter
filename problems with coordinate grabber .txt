@@ -1,0 +1,54 @@
+Change AV to Avenue 
+Change BP to Bypass (for 2000 Burlington BP - Northgate)
+Change BV to Blvd or Boulevard
+Change CL to circle / CIR
+Change DR to Drive
+change LA to LANE 
+Change PY to Parkway
+Change ST to Street
+Change WY to Way 
+** Change TR to Trail?
+
+##string = '107 AVELRIGHT AV'
+##string = '2000 BURLINGTONBP BP'
+##string = '2000 BURLINGTONBY BY'
+##string = '1074 CLORY CL'
+##string = '185808 DRIVEWAY DR'
+##string = '108428 LAMONT LA'
+##string = '1038572048 PYONLA PY'
+##string = '59 STIRRUP ST'
+##string = '1074 WYOMINGSTPYLADRCLBVBPAV WY'
+
+
+~~ Change 23 Stone Villa to 98-82 W 3rd St, Burlington, NJ 08016
+
+~~ FOR RIVERBANK: 
+
+	If 08010 : its riverbank AVENUE
+	If 08016 : its riverbank STREET
+
+~~ FOR 304 BENNETT Street Florence Township
+	Change to BENNET
+
+Change all seventh street to 7th Street 
+(i.e. sixth street to 6th street)
+Eighteenth street -> 18th street
+
+
+~~Remove all APT #
+~~Remove all SUITE #
+~~RM #
+~~FLOOR 1
+~~UNKN (after RD for 2305 Rancocas a lot)
+
+
+
+Don't change Florence. There are 3 zip codes, 08016, 08518, and 08554
+Change all the city / town names to zip codes.. this helps the US-130 shit
+RT130 -> US-130
+
+
+
+
+RT295
+RT130
