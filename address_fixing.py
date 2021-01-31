@@ -130,46 +130,45 @@ for i in range(len(data_909.Address)):
 
 
 
+data_909.to_csv("/Users/evangoldsmith/Documents/GitHub/Address-Plotter/manipulated_datasets/ALMOST_DONE.csv")
 
-
+print(data_909)
+print('hi')
 
 
 '''testing geocoding with all address' '''
 
 
 brokeAddress = []
-with open('/Users/evangoldsmith/Documents/GitHub/Address-Plotter/NON_GEOCODEABLE.csv', mode='w') as file1: #creating the file we are writing to 
-    fileWriter1 = csv.writer(file1, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-    fileWriter1.writerow(['', 'Date', 'Address'])
-    for i in range(len(data_909.Address)):
-        curNewAddy = data_909.Address_New[i]
-        curCity = data_909.City[i]
-        curZipCode = data_909.Zipcode[i]
-        curState = "New Jersey"
+##with open('/Users/evangoldsmith/Documents/GitHub/Address-Plotter/NON_GEOCODEABLE.csv', mode='w') as file1: #creating the file we are writing to 
+##    fileWriter1 = csv.writer(file1, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+##    fileWriter1.writerow(['', 'Date', 'Address'])
+for i in range(len(data_909.Address)):
+    curNewAddy = data_909.Address_New[i]
+    curCity = data_909.City[i]
+    curZipCode = data_909.Zipcode[i]
+    curState = "New Jersey"
 
 
-        geoLocation = address_plotter.returnCoordinates(curNewAddy, curZipCode, curState)
+    geoLocation = address_plotter.returnCoordinates(curNewAddy, curZipCode, curState)
 
-        if (i%4500 == 0):
-            print(data_909.Date[i], curNewAddy)
+    if (i%4500 == 0):
+        print(data_909.Date[i], curNewAddy)
 
-        x = 1
-        
-        if(geoLocation == None):
-            #print('didnt work', data_909.Date[i], curNewAddy, curZipCode)
+    x = 1
+    
+    if(geoLocation == None):
+        #print('didnt work', data_909.Date[i], curNewAddy, curZipCode)
 
-            if(curNewAddy not in brokeAddress):
-                fileWriter1.writerow(['', str(data_909.Date[i]), curNewAddy])
-                brokeAddress.append((str(data_909.Date[i]), curNewAddy))
+        if(curNewAddy not in brokeAddress):
+            #fileWriter1.writerow(['', str(data_909.Date[i]), curNewAddy])
+            brokeAddress.append((str(data_909.Date[i]), curNewAddy))
 
     ##    elif(geoLocation != None):
     ##        print('it worked!', geoLocation)
         #fixing address
 
-with open("NON_GEOCODEABLE_ADDRESS.txt", "w") as file:
-    for item in brokeAddress:
-        file.write("%s\n" % item)
-    
+
 #data_909.to_csv("/Users/evangoldsmith/Documents/GitHub/Address-Plotter/TRYING_DATASET.csv")
 
     

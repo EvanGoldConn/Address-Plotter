@@ -15,9 +15,9 @@ import pandas as pd
 
 locator = Nominatim(user_agent="myGeocoder")
 
-testdf = pd.read_csv("addresses.csv")
-
-df_909 = pd.read_csv("909_dataset.csv")
+##testdf = pd.read_csv("addresses.csv")
+##
+df_909 = pd.read_csv("/Users/evangoldsmith/Documents/GitHub/Address-Plotter/manipulated_datasets/ALMOST_DONE_3rd.csv")
 newdf = df_909
 
 geocode = RateLimiter(locator.geocode, min_delay_seconds=1)
@@ -27,27 +27,28 @@ geocode = RateLimiter(locator.geocode, min_delay_seconds=1)
 
 
 ##print(len(df_909))
-##df1 = df_909.iloc[:8270]
-##df2 = df_909.iloc[8270:16540]
-##df3 = df_909.iloc[16540:24810]
-##df4 = df_909.iloc[24810:]
+##df1 = df_909.iloc[:6616]
+##df2 = df_909.iloc[6616:13232]
+##df3 = df_909.iloc[13232:19848]
+##df4 = df_909.iloc[19848:26464]
+##df5 = df_909.iloc[26464:]
 ##
 ##
 ##
-##dfs = [df1, df2, df3, df4]
+##dfs = [df1, df2, df3, df4, df5]
 ##
 ##updatedDFs = []
 ##for curDF in dfs:
 ##
-##    curDF['ADDRESS'] = curDF.Address+', '+curDF.City+', New Jersey, United States of America'
-##    curDF['location'] = curDF['ADDRESS'].apply(geocode)
-##    curDF['point'] = curDF['location'].apply(lambda loc: tuple(loc.point) if loc else None)
-##    curDF[['latitude', 'longitude', 'altitude']] = pd.DataFrame(curDF['point'].tolist(), index=curDF.index)
+##    curDF['GEOADDRESS'] = curDF.New_Address_Fixed+', '+curDF.City+', New Jersey, United States of America'
+##    curDF['GEOlocation'] = curDF['GEOADDRESS'].apply(geocode)
+##    curDF['GEOpoint'] = curDF['GEOlocation'].apply(lambda loc: tuple(loc.point) if loc else None)
+##    curDF[['latitude', 'longitude', 'altitude']] = pd.DataFrame(curDF['GEOpoint'].tolist(), index=curDF.index)
 ##
 ##    updatedDFs.append(curDF)
 ##
 ##fullDF = pd.concat(updatedDFs)
-##fullDF.to_csv("/Users/evangoldsmith/Documents/GitHub/Email-Scraper/saved_directory/909_dataset_coordinates.csv")
+##fullDF.to_csv("/Users/evangoldsmith/Documents/GitHub/Address-Plotter/manipulated_datasets/ALMOST_DONE_4th.csv")
 
 
 ####
